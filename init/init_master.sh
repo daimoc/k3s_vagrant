@@ -7,6 +7,7 @@ echo "Flannel eth : "$ETH
 
 curl -sfL https://get.k3s.io | INSTALL_K3S_EXEC="--bind-address=$MASTER_IP --node-external-ip=$MASTER_IP --flannel-iface=$ETH" sh - 
 
+mkdir -p /vagrant/tmp
 cp /var/lib/rancher/k3s/server/node-token /vagrant/tmp/node-token
 cp /etc/rancher/k3s/k3s.yaml /vagrant/tmp/k3s.yaml
 
